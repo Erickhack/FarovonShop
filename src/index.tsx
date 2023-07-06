@@ -1,9 +1,5 @@
-import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
+import App from "./app";
 
 export default function IndexApp() {
-  return (
-    <View>
-    </View>
-  );
+  return <App />;
 }

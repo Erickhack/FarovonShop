@@ -1,9 +1,13 @@
 import React from "react";
-import { View } from "react-native";
 import { WithProvider } from "./provider";
+import Navigations from "../pages";
 
 const App = () => {
-  return <View>index</View>;
+  return (
+    <>
+      <Navigations />
+    </>
+  );
 };
 
 export default WithProvider(App);
