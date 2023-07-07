@@ -1,10 +1,15 @@
+import { LoginTitle } from "../../../../widgets";
 import React from "react";
 import { View, Text } from "react-native";
+import { LoginForm } from "../../../../widgets/Login/Form";
 
-export const LogIn = () => {
+const LogIn = () => {
   return (
     <View>
-      <Text>LogIn</Text>
+      <LoginTitle></LoginTitle>
+      <LoginForm></LoginForm>
     </View>
   );
 };
+
+export default LogIn;

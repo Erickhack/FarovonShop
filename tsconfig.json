@@ -1,24 +1,6 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "baseUrl": "./src",
-    "paths": {
-      "@app/*": ["./app/*"],
-      "@app": ["./app"],
-      "@entities/*": ["./entities/*"],
-      "@entities": ["./entities"],
-      "@features/*": ["./features/*"],
-      "@features": ["./features"],
-      "@pages/*": ["./pages/*"],
-      "@pages": ["./pages"],
-      "@processes/*": ["./processes/*"],
-      "@processes": ["./processes"],
-      "@shared/*": ["./shared/*"],
-      "@shared": ["./shared"],
-      "@widgets/*": ["./widgets/*"],
-      "@widgets": ["./widgets"],
-      "@svgs": ["./app/assets/svgs"]
-    }
+    "strict": true
   },
   "extends": "expo/tsconfig.base"
 }
