@@ -1,16 +1,21 @@
-import { LoginTitle, LoginForm } from "../../../../widgets";
 import React from "react";
 import { View, StyleSheet } from "react-native";
+import { LoginForm, LoginTitle } from "../../../../widgets";
+import { ParamListBase } from "@react-navigation/native";
 
-interface IProps {}
+interface IProps {
+  [name: string]: any;
+}
 
 const LogIn: React.FC<IProps> = (props) => {
-  console.log(props);
+  const handleOnPress = () => {
+    props.drawProps.navigation.navigate("App");
+  };
 
   return (
     <View style={style.container}>
       <LoginTitle />
-      <LoginForm />
+      <LoginForm onPress={handleOnPress} />
     </View>
   );
 };

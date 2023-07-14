@@ -1,25 +1,89 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { LogIn } from "./Auth/LogIn";
+import Products from "./App/Products";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { FilterSVG, ProductSVG } from "../shared/assets";
+import { HeaderNavigationContainer } from "../entities";
+import { Text, View } from "react-native";
+import { ProductHeadNav } from "../widgets";
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
+
+const StackAuthNavigator = (props: any) => {
+  return (
+    <Stack.Navigator
+      initialRouteName="Login"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Login"
+        component={(stackProps: any) => (
+          <LogIn drawProps={props} stackProps={stackProps} />
+        )}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const StackProductNavigation = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Products"
+        component={Products}
+        options={{
+          header: ProductHeadNav,
+        }}
+      />
+      <Stack.Screen name="Filters" component={() => <></>} />
+    </Stack.Navigator>
+  );
+};
+
+const TabNavigation = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Tab.Screen
+        name="Products"
+        component={StackProductNavigation}
+        options={({ route }) => {
+          return {
+            tabBarIcon: ({ focused }) => (
+              <ProductSVG color={focused ? "#E42346" : "#91989F"} />
+            ),
+            title: "Товары",
+            tabBarStyle: {},
+          };
+        }}
+      />
+      <Tab.Screen name="Orders" component={Products} />
+      <Tab.Screen name="Documents" component={Products} />
+      <Tab.Screen name="Clients" component={Products} />
+      <Tab.Screen name="Profiles" component={Products} />
+    </Tab.Navigator>
+  );
+};
 
 export const Navigations = () => {
-  const navigation = useNavigation();
-
-  React.useEffect(() => {}, []);
-
   return (
-    <>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Home" component={LogIn} />
-      </Stack.Navigator>
-    </>
+    <Drawer.Navigator
+      initialRouteName="App"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Drawer.Screen name="Auth" component={StackAuthNavigator} />
+      <Drawer.Screen name="App" component={TabNavigation} />
+    </Drawer.Navigator>
   );
 };

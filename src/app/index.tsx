@@ -1,7 +1,7 @@
 import React from "react";
 import { WithProvider } from "./provider";
 import { Navigations } from "../pages";
-import { SafeAreaView } from "react-native";
+import "react-native-gesture-handler";
 
 const App = () => {
   return (
@@ -12,4 +12,3 @@ const App = () => {
 };
 
 export default WithProvider(App);
-  
