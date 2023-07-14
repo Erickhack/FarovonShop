@@ -1,3 +1,3 @@
 import { Navigations } from "./navigator";
 
-export default Navigations;
+export { Navigations };

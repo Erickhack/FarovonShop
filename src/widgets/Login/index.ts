@@ -1,2 +1,4 @@
-export * from "./Title";
-export * from "./Form";
+import { LoginTitle } from "./Title";
+import { LoginForm } from "./Form";
+
+export { LoginTitle, LoginForm };

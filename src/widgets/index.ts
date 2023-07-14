@@ -1,1 +1,3 @@
-export * from './Login'
+import { LoginForm, LoginTitle } from "./Login";
+
+export { LoginForm, LoginTitle };

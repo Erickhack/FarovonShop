@@ -50,7 +50,7 @@ const IconKey = () => (
   </svg>
 );
 
-export const LoginForm = () => {
+export const LoginForm: React.FC = () => {
   return (
     <View>
       <View style={styles.formContain}>
