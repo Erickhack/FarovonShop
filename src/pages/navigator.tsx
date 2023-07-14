@@ -4,10 +4,10 @@ import { LogIn } from "./Auth/LogIn";
 import Products from "./App/Products";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FilterSVG, ProductSVG } from "../shared/assets";
-import { HeaderNavigationContainer } from "../entities";
-import { Text, View } from "react-native";
+import { ProductSVG } from "../shared/assets";
 import { ProductHeadNav } from "../widgets";
+import ProductFilter from "./App/Products/ui/ProductFilter";
+import { ProductFilterHeader } from "../widgets/Products/ProductFilter/ui/ProductFilterHeader";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -41,7 +41,13 @@ const StackProductNavigation = () => {
           header: ProductHeadNav,
         }}
       />
-      <Stack.Screen name="Filters" component={() => <></>} />
+      <Stack.Screen
+        name="Filters"
+        component={ProductFilter}
+        options={{
+          header: ProductFilterHeader,
+        }}
+      />
     </Stack.Navigator>
   );
 };

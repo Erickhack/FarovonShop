@@ -4,6 +4,7 @@ import {
   ProductFilterList,
   ProductsSearch,
   ProductList,
+  ProductFIlter,
 } from "./Products";
 
 export {
@@ -13,4 +14,5 @@ export {
   ProductFilterList,
   ProductsSearch,
   ProductList,
+  ProductFIlter,
 };
