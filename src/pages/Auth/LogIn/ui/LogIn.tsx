@@ -1,15 +1,28 @@
-import { LoginTitle } from "../../../../widgets";
+import { LoginTitle, LoginForm } from "../../../../widgets";
 import React from "react";
-import { View, Text } from "react-native";
-import { LoginForm } from "../../../../widgets/Login/Form";
+import { View, StyleSheet } from "react-native";
 
-const LogIn = () => {
+interface IProps {}
+
+const LogIn: React.FC<IProps> = (props) => {
+  console.log(props);
+
   return (
-    <View>
-      <LoginTitle></LoginTitle>
-      <LoginForm></LoginForm>
+    <View style={style.container}>
+      <LoginTitle />
+      <LoginForm />
     </View>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    height: "100%",
+    paddingHorizontal: 16,
+    display: "flex",
+    gap: 24,
+    justifyContent: "center",
+  },
+});
 
 export default LogIn;

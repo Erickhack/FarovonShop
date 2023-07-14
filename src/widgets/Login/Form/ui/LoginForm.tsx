@@ -53,8 +53,8 @@ const IconKey = () => (
 export const LoginForm = () => {
   return (
     <View>
-      <View>
-        <View>
+      <View style={styles.formContain}>
+        <View style={styles.fieldContain}>
           <View>
             <Text>Логин</Text>
           </View>
@@ -64,7 +64,7 @@ export const LoginForm = () => {
             </InputTextContainer>
           </View>
         </View>
-        <View>
+        <View style={styles.fieldContain}>
           <View>
             <Text>Пароль</Text>
           </View>
@@ -85,5 +85,12 @@ export const LoginForm = () => {
 const styles = StyleSheet.create({
   containerBtnForm: {
     borderRadius: 5,
+  },
+  formContain: {
+    marginBottom: 32,
+  },
+  fieldContain: {
+    display: "flex",
+    gap: 12,
   },
 });
