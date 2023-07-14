@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View } from "react-native";
+import { HeadDesc } from "../../../../entities";
 
 interface IProps {
   children?: React.ReactNode;
@@ -10,8 +11,9 @@ export const LoginTitle: React.FC<IProps> = (props) => {
     <View>
       <View></View>
       <View>
-        <Text>Teest</Text>
-        <Text></Text>
+        <HeadDesc title="Добро пожаловать">
+          Введите свои данные которые {"\n"} указывали при регистрации
+        </HeadDesc>
       </View>
     </View>
   );

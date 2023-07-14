@@ -1,18 +1,13 @@
 import React from "react";
-import {
-  TextInput,
-  StyleSheet,
-  View,
-  Text,
-  TextInputProps,
-} from "react-native";
+import { StyleSheet, View, TextInputProps } from "react-native";
 import { If } from "../../../shared/components/If";
 
 interface IProps extends TextInputProps {
   icon?: () => JSX.Element;
+  children?: React.ReactNode;
 }
 
-const InputText: React.FC<IProps> = (props) => {
+const InputTextContainer: React.FC<IProps> = (props) => {
   const Icon = props?.icon ?? (() => <View></View>);
 
   return (
@@ -23,9 +18,7 @@ const InputText: React.FC<IProps> = (props) => {
         </If>
       </View>
       <View style={styles.border} />
-      <View style={styles.ContainerInput}>
-        <TextInput style={styles.input} {...props} />
-      </View>
+      <View style={styles.ContainerInput}>{props.children}</View>
     </View>
   );
 };
@@ -39,13 +32,6 @@ const styles = StyleSheet.create({
   },
   ContainerInput: {
     flex: 1,
-  },
-  input: {
-    padding: 10,
-    flex: 1,
-    outlineWidth: 0,
-    width: "100%",
-    paddingHorizontal: 10,
   },
   ContainerIcon: {
     display: "flex",
@@ -63,7 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default InputText;
-// border-radius: 5px;
-// border: 1px solid #4D6373;
-// background: #FFF;
+export default InputTextContainer;

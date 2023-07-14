@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import InputText from "../../../../entities/InputText/ui/InputText";
+import { InputTextContainer } from "../../../../entities";
 import { Button } from "react-native";
+import { InputText } from "../../../../features";
 
 const IconUser = () => (
   <svg
@@ -58,7 +59,9 @@ export const LoginForm = () => {
             <Text>Логин</Text>
           </View>
           <View>
-            <InputText placeholder="Введите ваш логин" icon={IconUser} />
+            <InputTextContainer icon={IconUser}>
+              <InputText placeholder="Введите ваш логин" />
+            </InputTextContainer>
           </View>
         </View>
         <View>
@@ -66,7 +69,9 @@ export const LoginForm = () => {
             <Text>Пароль</Text>
           </View>
           <View>
-            <InputText placeholder="Введите ваш пароль" icon={IconKey} />
+            <InputTextContainer icon={IconKey}>
+              <InputText placeholder="Введите ваш пароль" />
+            </InputTextContainer>
           </View>
         </View>
       </View>
