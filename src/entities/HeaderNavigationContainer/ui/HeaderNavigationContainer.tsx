@@ -17,7 +17,8 @@ export const HeaderNavigationContainer: React.FC<IProps> = (props) => {
 const style = StyleSheet.create({
   headerNavContain: {
     backgroundColor: "white",
-    height: 45,
+    height: 80,
+    width: "100%",
     borderWidth: 1,
     borderRightWidth: 0,
     borderLeftWidth: 0,

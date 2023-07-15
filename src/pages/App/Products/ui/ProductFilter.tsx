@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { ProductFIlter } from "../../../../widgets";
 
 interface IProps {
@@ -8,12 +8,20 @@ interface IProps {
 
 const ProductFilter: React.FC<IProps> = (props) => {
   return (
-    <View>
+    <View style={style.contain}>
       <View>
         <ProductFIlter />
       </View>
     </View>
   );
-};  
+};
 
 export default ProductFilter;
+
+const style = StyleSheet.create({
+  contain: {
+    backgroundColor: "white",
+    flex: 1,
+    padding: 16,
+  },
+});
