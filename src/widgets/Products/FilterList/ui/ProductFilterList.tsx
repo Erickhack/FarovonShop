@@ -7,7 +7,7 @@ export const ProductFilterList: React.FC = () => {
       <ScrollView
         style={style.scroll}
         horizontal
-        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
       >
         <View style={style.scrollContain}>
           <View

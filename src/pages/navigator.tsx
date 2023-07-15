@@ -66,6 +66,7 @@ const TabNavigation = () => {
       screenOptions={{
         headerShown: false,
       }}
+      initialRouteName="TabOrders"
     >
       <Tab.Screen
         name="TabProducts"
@@ -103,7 +104,7 @@ const TabNavigation = () => {
 export const Navigations = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="Auth"
+      initialRouteName="App"
       screenOptions={{
         headerShown: false,
       }}
