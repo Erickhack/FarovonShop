@@ -54,7 +54,11 @@ const StackProductNavigation = () => {
 
 const StackOrderNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Stack.Screen name="StackOrders" component={Orders} />
     </Stack.Navigator>
   );
@@ -77,7 +81,6 @@ const TabNavigation = () => {
               <ProductSVG color={focused ? "#E42346" : "#91989F"} />
             ),
             title: "Товары",
-            tabBarStyle: {},
           };
         }}
       />
@@ -90,7 +93,6 @@ const TabNavigation = () => {
               <OrderSVG fill={focused ? "#E42346" : "#91989F"} />
             ),
             title: "Товары",
-            tabBarStyle: {},
           };
         }}
       />

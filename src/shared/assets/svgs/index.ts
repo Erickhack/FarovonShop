@@ -4,6 +4,7 @@ import FilterSVG from "./Menues/Filter";
 import SearchSVG from "./Search/SearchSVG";
 import CirculeAddSVG from "./others/CirculeAdd/CirculeAddSVG";
 import OrderSVG from "./TabNavigationBottom/OrderSVG";
+import CancleSVG from "./others/CancleSVG/CancleSVG";
 
 export {
   ProductSVG,
@@ -12,4 +13,5 @@ export {
   SearchSVG,
   CirculeAddSVG,
   OrderSVG,
+  CancleSVG,
 };
