@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { RightArrow } from "../../../shared/assets";
+import { View, Text, StyleSheet, Platform, StatusBar } from "react-native";
 
 interface IProps {
   children?: React.ReactNode;
@@ -17,19 +16,17 @@ export const HeaderNavigationContainer: React.FC<IProps> = (props) => {
 const style = StyleSheet.create({
   headerNavContain: {
     backgroundColor: "white",
-    height: 80,
-    width: "100%",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  contain: {
     borderWidth: 1,
     borderRightWidth: 0,
     borderLeftWidth: 0,
     borderColor: "#F3F3F3",
-  },
-  contain: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    height: "100%",
     padding: 16,
   },
 });
