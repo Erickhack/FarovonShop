@@ -10,10 +10,10 @@ const Orders: React.FC<IProps> = (props) => {
       <View>
         <OrderHeader />
       </View>
-      <View>
+      <View style={style.main}>
         <OrderList />
       </View>
-      <View>
+      <View style={style.footer}>
         <TotalOrders />
       </View>
     </View>
@@ -26,5 +26,10 @@ const style = StyleSheet.create({
   contain: {
     padding: 16,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    height: "100%",
+  },
+  footer: {},
+  main: {
+    flex: 1,
   },
 });
