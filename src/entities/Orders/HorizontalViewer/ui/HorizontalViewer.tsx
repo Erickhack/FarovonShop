@@ -19,7 +19,7 @@ export const HorizontalViewer: React.FC<IProps> = (props) => {
       >
         <View style={style.container}>
           <View>
-            <Text>{props.default?.title}</Text>
+            <Text style={style.titile}>{props.default?.title}</Text>
           </View>
           <View>
             <Text style={style.information}>{props.default?.information}</Text>
@@ -37,8 +37,19 @@ const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  titile: {},
+  titile: {
+    color: "#545454",
+    fontSize: 14,
+    fontWeight: "500",
+  },
   information: {
     fontWeight: "500",
   },
 });
+
+// color: #545454;
+// font-family: Inter;
+// font-size: 14px;
+// font-style: normal;
+// font-weight: 500;
+// line-height: normal;
