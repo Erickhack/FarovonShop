@@ -7,9 +7,15 @@ interface IProps {}
 const Orders: React.FC<IProps> = (props) => {
   return (
     <View style={style.contain}>
-      <OrderHeader />
-      <OrderList />
-      <TotalOrders />
+      <View>
+        <OrderHeader />
+      </View>
+      <View>
+        <OrderList />
+      </View>
+      <View>
+        <TotalOrders />
+      </View>
     </View>
   );
 };
