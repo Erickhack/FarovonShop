@@ -1,10 +1,15 @@
 import React from "react";
-import { View, StyleSheet, Platform, StatusBar } from "react-native";
+import { View, StyleSheet, Platform, StatusBar, Pressable } from "react-native";
 import { OrderHeader, OrderList, TotalOrders } from "../../../../widgets";
+import { Button } from "react-native";
 
 interface IProps {}
 
 const Orders: React.FC<IProps> = (props) => {
+  console.log(props);
+
+  const handlePress = () => {};
+
   return (
     <View style={style.contain}>
       <View>
@@ -15,6 +20,9 @@ const Orders: React.FC<IProps> = (props) => {
       </View>
       <View style={style.footer}>
         <TotalOrders />
+        <View>
+          <Button title="Войти" color="#032E4D" onPress={handlePress} />
+        </View>
       </View>
     </View>
   );
@@ -28,8 +36,12 @@ const style = StyleSheet.create({
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     height: "100%",
   },
-  footer: {},
+  footer: {
+    display: "flex",
+    gap: 24,
+  },
   main: {
     flex: 1,
   },
+  containerBtn: {},
 });

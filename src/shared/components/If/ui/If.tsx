@@ -8,6 +8,5 @@ interface IProps {
 }
 
 export const If: React.FC<IProps> = (props) => {
-  props.anotherChildren = props?.anotherChildren ?? null;
   return <>{props.condition ? props.children : props.anotherChildren}</>;
 };
