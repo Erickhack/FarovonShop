@@ -19,7 +19,7 @@ const style = StyleSheet.create({
     fontFamily: "Inter",
     fontSize: 18,
     fontStyle: "normal",
-    fontWeight: "500",
+    fontWeight: "700",
     lineHeight: undefined,
   },
 });

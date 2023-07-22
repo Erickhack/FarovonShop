@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet, Platform, StatusBar } from "react-native";
-import { OrderHeader, OrderList } from "../../../../widgets";
+import { OrderHeader, OrderList, TotalOrders } from "../../../../widgets";
 
 interface IProps {}
 
@@ -9,6 +9,7 @@ const Orders: React.FC<IProps> = (props) => {
     <View style={style.contain}>
       <OrderHeader />
       <OrderList />
+      <TotalOrders />
     </View>
   );
 };
