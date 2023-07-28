@@ -5,10 +5,10 @@ import Products from "./App/Products";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { OrderSVG, ProductSVG } from "../shared/assets";
-import { ProductHeadNav } from "../widgets";
+import { ProductHeadNav, SelectClientHeader } from "../widgets";
 import ProductFilter from "./App/Products/ui/ProductFilter";
 import { ProductFilterHeader } from "../widgets/Products/ProductFilter/ui/ProductFilterHeader";
-import Orders from "./App/Orders";
+import { Orders, SelectClient } from "./App/Orders";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -54,12 +54,21 @@ const StackProductNavigation = () => {
 
 const StackOrderNavigation = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name="StackOrders" component={Orders} />
+    <Stack.Navigator>
+      <Stack.Screen
+        name="StackOrders"
+        component={Orders}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="StackOrdersSelectClient"
+        component={SelectClient}
+        options={{
+          header: SelectClientHeader,
+        }}
+      />
     </Stack.Navigator>
   );
 };

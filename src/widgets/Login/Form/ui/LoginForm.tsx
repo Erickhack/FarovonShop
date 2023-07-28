@@ -56,7 +56,7 @@ export const LoginForm: React.FC<IProps> = (props) => {
           </View>
           <View>
             <InputTextContainer icon={IconKey}>
-              <InputText placeholder="Введите ваш пароль" />
+              <InputText placeholder="Введите ваш пароль" secureTextEntry />
             </InputTextContainer>
           </View>
         </View>

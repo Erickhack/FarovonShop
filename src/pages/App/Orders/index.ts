@@ -1,3 +1,4 @@
 import Orders from "./ui/Orders";
+import SelectClient from "./ui/SelectClient";
 
-export default Orders;
+export { SelectClient, Orders };

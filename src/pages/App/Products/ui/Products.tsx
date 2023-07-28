@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import {
   ProductFilterList,
   ProductList,
-  ProductsSearch,
+  Search,
 } from "../../../../widgets";
 
 const Products: React.FC<any> = (props) => {
@@ -11,7 +11,7 @@ const Products: React.FC<any> = (props) => {
     <View>
       <View style={style.headerContain}>
         <View>
-          <ProductsSearch />
+          <Search />
         </View>
         <View>
           <ProductFilterList />

@@ -1,10 +1,10 @@
 import React from "react";
-import { InputTextContainer } from "../../../../entities";
-import { InputText } from "../../../../features";
+import { InputTextContainer } from "../../../entities";
+import { InputText } from "../../../features";
 import { View } from "react-native";
-import { SearchSVG } from "../../../../shared/assets";
+import { SearchSVG } from "../../../shared/assets";
 
-export const ProductsSearch: React.FC = () => {
+export const Search: React.FC = () => {
   const [focused, setFocused] = React.useState<boolean>(false);
 
   return (

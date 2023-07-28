@@ -3,12 +3,14 @@ import { View, StyleSheet, Platform, StatusBar, Pressable } from "react-native";
 import { OrderHeader, OrderList, TotalOrders } from "../../../../widgets";
 import { Button } from "react-native";
 
-interface IProps {}
+interface IProps {
+  navigation: any;
+}
 
 const Orders: React.FC<IProps> = (props) => {
-  console.log(props);
-
-  const handlePress = () => {};
+  const handlePress = () => {
+    props.navigation.navigate("StackOrdersSelectClient");
+  };
 
   return (
     <View style={style.contain}>
@@ -21,7 +23,7 @@ const Orders: React.FC<IProps> = (props) => {
       <View style={style.footer}>
         <TotalOrders />
         <View>
-          <Button title="Войти" color="#032E4D" onPress={handlePress} />
+          <Button title="Продолжить" color="#032E4D" onPress={handlePress} />
         </View>
       </View>
     </View>
