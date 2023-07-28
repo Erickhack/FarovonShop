@@ -3,9 +3,12 @@ import { HeaderNavigationContainer } from "../../../../entities";
 import { Pressable, Text, View } from "react-native";
 import { RightArrow } from "../../../../shared/assets";
 import { H2 } from "../../../../shared/components/HeadingElements";
+import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
-export const SelectClientHeader = () => {
-  const handleOnPress = () => {};
+export const SelectClientHeader: React.FC<NativeStackHeaderProps> = (props) => {
+  const handleOnPress = () => {
+    props.navigation.goBack();
+  };
 
   return (
     <HeaderNavigationContainer>

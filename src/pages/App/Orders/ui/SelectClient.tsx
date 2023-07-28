@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Search } from "../../../../widgets";
+import { Search, SelectClientList } from "../../../../widgets";
 
 const SelectClient = () => {
   return (
@@ -9,7 +9,9 @@ const SelectClient = () => {
         <View style={style.header}>
           <Search />
         </View>
-        <View style={style.main}></View>
+        <View style={style.main}>
+          <SelectClientList />
+        </View>
         <View style={style.footer}></View>
       </View>
     </View>
