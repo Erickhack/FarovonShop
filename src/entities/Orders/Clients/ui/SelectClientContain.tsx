@@ -36,6 +36,9 @@ const style = StyleSheet.create({
   },
   contain: {
     padding: 16,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
   focused: {},
   main: {
