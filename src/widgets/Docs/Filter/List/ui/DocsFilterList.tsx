@@ -1,9 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import { H2 } from "../../../../shared/components/HeadingElements";
 import CheckBox from "@react-native-community/checkbox";
+import { H2 } from "../../../../../shared/components/HeadingElements";
 
-export const ProductFIlter: React.FC = () => {
+export const DocsFilterList: React.FC = () => {
   const [toggleCheckBox, setToggleCheckBox] = React.useState<boolean>(false);
 
   return (
@@ -12,7 +12,7 @@ export const ProductFIlter: React.FC = () => {
         <H2>Категории товаров</H2>
       </View>
       <View style={style.filterContain}>
-        <View style={style.filter}> 
+        <View style={style.filter}>
           <View style={style.checkbox}></View>
           <View style={style.filterContainText}>
             <Text>Все товары</Text>

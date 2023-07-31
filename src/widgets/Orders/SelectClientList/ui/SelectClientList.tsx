@@ -1,7 +1,5 @@
 import React from "react";
 import { View, StyleSheet, Text, ScrollView } from "react-native";
-import { SelectClientContain } from "../../../../entities";
-import { SelectedSVG } from "../../../../shared/assets";
 import { SelectClientViewer } from "../../../../features";
 
 const Informations = [

@@ -1,14 +1,14 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import { LogIn } from "./Auth/LogIn";
-import Products from "./App/Products";
+import Products, { ProductFilter } from "./App/Products";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { OrderSVG, ProductSVG } from "../shared/assets";
-import { ProductHeadNav, SelectClientHeader } from "../widgets";
-import ProductFilter from "./App/Products/ui/ProductFilter";
-import { ProductFilterHeader } from "../widgets/Products/ProductFilter/ui/ProductFilterHeader";
+import { DocsSVG, OrderSVG, ProductSVG } from "../shared/assets";
+import { DocHeaderNav, DovsFilterHeader, ProductHeadNav, SelectClientHeader } from "../widgets";
+import { ProductFilterHeader } from "../widgets";
 import { Orders, SelectClient } from "./App/Orders";
+import Docs, { DocsFilter } from "./App/Docs";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -73,13 +73,34 @@ const StackOrderNavigation = () => {
   );
 };
 
+const StackDocsNavigation = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="StackDocs"
+        component={Docs}
+        options={{
+          header: DocHeaderNav,
+        }}
+      />
+      <Stack.Screen
+        name="StackDocsFilter"
+        component={DocsFilter}
+        options={{
+          header: DovsFilterHeader,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="TabOrders"
+      initialRouteName="TabDocs"
     >
       <Tab.Screen
         name="TabProducts"
@@ -96,7 +117,7 @@ const TabNavigation = () => {
       <Tab.Screen
         name="TabOrders"
         component={StackOrderNavigation}
-        options={({ route }) => {
+        options={() => {
           return {
             tabBarIcon: ({ focused }) => (
               <OrderSVG fill={focused ? "#E42346" : "#91989F"} />
@@ -105,7 +126,18 @@ const TabNavigation = () => {
           };
         }}
       />
-      <Tab.Screen name="Documents" component={Products} />
+      <Tab.Screen
+        name="TabDocs"
+        component={StackDocsNavigation}
+        options={() => {
+          return {
+            tabBarIcon: ({ focused }) => (
+              <DocsSVG fill={focused ? "#E42346" : "#91989F"} />
+            ),
+            title: "Документы",
+          };
+        }}
+      />
       <Tab.Screen name="Clients" component={Products} />
       <Tab.Screen name="Profiles" component={Products} />
     </Tab.Navigator>

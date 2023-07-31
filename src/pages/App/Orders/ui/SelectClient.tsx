@@ -15,7 +15,11 @@ const SelectClient = () => {
       </View>
       <View style={style.footer}>
         <View style={style.containerBtnForm}>
-          <Button title="Оформить заказ" color="#032E4D" onPress={handlePress} />
+          <Button
+            title="Оформить заказ"
+            color="#032E4D"
+            onPress={handlePress}
+          />
         </View>
       </View>
     </View>
