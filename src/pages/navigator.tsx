@@ -8,6 +8,7 @@ import { ClientsSVG, DocsSVG, OrderSVG, ProductSVG } from "../shared/assets";
 import {
   DocHeaderNav,
   DovsFilterHeader,
+  HeaderNavigationAddClient,
   HeaderNavigationClient,
   ProductHeadNav,
   SelectClientHeader,
@@ -15,7 +16,7 @@ import {
 import { ProductFilterHeader } from "../widgets";
 import { Orders, SelectClient } from "./App/Orders";
 import Docs, { DocsFilter } from "./App/Docs";
-import Clients from "./App/Clients";
+import Clients, { AddClient } from "./App/Clients";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -113,9 +114,9 @@ const StackClientsNavigation = () => {
       />
       <Stack.Screen
         name="StackAddClient"
-        component={DocsFilter}
+        component={AddClient}
         options={{
-          header: DovsFilterHeader,
+          header: HeaderNavigationAddClient,
         }}
       />
     </Stack.Navigator>

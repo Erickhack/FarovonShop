@@ -15,6 +15,7 @@ import DocumentSVG24 from "./24x24/DocumentSVG/DocumentSVG24";
 import ClientsSVG from "./TabNavigationBottom/ClientsSVG";
 import CirclePluseSVG16 from "./16x16/CirclePluse/CirclePluseSVG16";
 import EditclientSVG24 from "./24x24/EditClientSVG/EditclientSVG24";
+import ProfileSVG from "./TabNavigationBottom/ProfileSVG";
 
 export {
   ProductSVG,
@@ -34,4 +35,5 @@ export {
   ClientsSVG,
   CirclePluseSVG16,
   EditclientSVG24,
+  ProfileSVG,
 };
