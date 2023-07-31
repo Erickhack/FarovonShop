@@ -16,5 +16,7 @@ const style = StyleSheet.create({
     backgroundColor: "#F3F8FF",
     display: "flex",
     justifyContent: "space-between",
+    borderRadius: 5,
+    flexDirection: "row",
   },
 });

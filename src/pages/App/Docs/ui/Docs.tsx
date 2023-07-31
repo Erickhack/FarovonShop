@@ -1,6 +1,6 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { Search } from "../../../../widgets";
+import { DocList, Search } from "../../../../widgets";
 
 const Docs = () => {
   return (
@@ -8,7 +8,9 @@ const Docs = () => {
       <View>
         <Search />
       </View>
-      <View></View>
+      <View>
+        <DocList />
+      </View>
     </View>
   );
 };
