@@ -4,11 +4,18 @@ import { LogIn } from "./Auth/LogIn";
 import Products, { ProductFilter } from "./App/Products";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { DocsSVG, OrderSVG, ProductSVG } from "../shared/assets";
-import { DocHeaderNav, DovsFilterHeader, ProductHeadNav, SelectClientHeader } from "../widgets";
+import { ClientsSVG, DocsSVG, OrderSVG, ProductSVG } from "../shared/assets";
+import {
+  DocHeaderNav,
+  DovsFilterHeader,
+  HeaderNavigationClient,
+  ProductHeadNav,
+  SelectClientHeader,
+} from "../widgets";
 import { ProductFilterHeader } from "../widgets";
 import { Orders, SelectClient } from "./App/Orders";
 import Docs, { DocsFilter } from "./App/Docs";
+import Clients from "./App/Clients";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -94,13 +101,34 @@ const StackDocsNavigation = () => {
   );
 };
 
+const StackClientsNavigation = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="StackClients"
+        component={Clients}
+        options={{
+          header: HeaderNavigationClient,
+        }}
+      />
+      <Stack.Screen
+        name="StackAddClient"
+        component={DocsFilter}
+        options={{
+          header: DovsFilterHeader,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const TabNavigation = () => {
   return (
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="TabDocs"
+      initialRouteName="TabClients"
     >
       <Tab.Screen
         name="TabProducts"
@@ -138,7 +166,18 @@ const TabNavigation = () => {
           };
         }}
       />
-      <Tab.Screen name="Clients" component={Products} />
+      <Tab.Screen
+        name="TabClients"
+        component={StackClientsNavigation}
+        options={() => {
+          return {
+            tabBarIcon: ({ focused }) => (
+              <ClientsSVG fill={focused ? "#E42346" : "#91989F"} />
+            ),
+            title: "Документы",
+          };
+        }}
+      />
       <Tab.Screen name="Profiles" component={Products} />
     </Tab.Navigator>
   );

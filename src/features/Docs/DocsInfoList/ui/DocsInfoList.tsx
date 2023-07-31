@@ -10,8 +10,8 @@ interface IProps {
 export const DocsInfoList: React.FC<IProps> = (props) => {
   return (
     <View style={style.contain}>
-      {props.DocsInfoNames.map((name) => (
-        <InfoDocContain>
+      {props.DocsInfoNames.map((name, index) => (
+        <InfoDocContain key={name + "-" + index}>
           <View>
             <Text>name</Text>
           </View>

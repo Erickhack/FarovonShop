@@ -4,24 +4,20 @@ import { If } from "../../../../shared/components/If";
 
 interface IProps {
   children?: React.ReactNode;
-  focused: boolean;
   focueView?: React.ReactNode;
 }
 
-export const SelectClientContain: React.FC<IProps> = (props) => {
+export const ClientViewerContain: React.FC<IProps> = (props) => {
   return (
     <View
       style={{
-        ...style.selectClientContain,
-        ...(props.focused && {
-          borderWidth: 2,
-        }),
+        ...style.clientViewerContain,
       }}
     >
       <View style={style.contain}>
         <View style={style.main}>{props.children}</View>
-        <View style={style.focused}>
-          <If condition={props.focused}>{props.focueView}</If>
+        <View>
+          <If condition={props.focueView !== undefined}>{props.focueView}</If>
         </View>
       </View>
     </View>
@@ -29,18 +25,16 @@ export const SelectClientContain: React.FC<IProps> = (props) => {
 };
 
 const style = StyleSheet.create({
-  selectClientContain: {
+  clientViewerContain: {
     backgroundColor: "white",
     borderRadius: 5,
-    borderColor: "#032E4D",
   },
   contain: {
     padding: 16,
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
-  focused: {},
   main: {
     display: "flex",
     gap: 12,

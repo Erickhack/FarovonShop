@@ -1,12 +1,16 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ViewProps } from "react-native";
 
-interface IProps {
+interface IProps extends ViewProps {
   children?: React.ReactNode;
 }
 
 export const InfoDocContain: React.FC<IProps> = (props) => {
-  return <View style={style.contain}>{props.children}</View>;
+  return (
+    <View style={style.contain} {...props}>
+      {props.children}
+    </View>
+  );
 };
 
 const style = StyleSheet.create({

@@ -12,6 +12,9 @@ import PhoneSVG16 from "./16x16/PhoneSVG/PhoneSVG16";
 import LocationSVG16 from "./16x16/Location/LocationSVG16";
 import DocsSVG from "./TabNavigationBottom/DocsSVG";
 import DocumentSVG24 from "./24x24/DocumentSVG/DocumentSVG24";
+import ClientsSVG from "./TabNavigationBottom/ClientsSVG";
+import CirclePluseSVG16 from "./16x16/CirclePluse/CirclePluseSVG16";
+import EditclientSVG24 from "./24x24/EditClientSVG/EditclientSVG24";
 
 export {
   ProductSVG,
@@ -28,4 +31,7 @@ export {
   LocationSVG16,
   DocsSVG,
   DocumentSVG24,
+  ClientsSVG,
+  CirclePluseSVG16,
+  EditclientSVG24,
 };
