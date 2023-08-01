@@ -16,7 +16,6 @@ export const HeaderNavigationContainer: React.FC<IProps> = (props) => {
 const style = StyleSheet.create({
   headerNavContain: {
     backgroundColor: "white",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
   contain: {
     borderWidth: 1,

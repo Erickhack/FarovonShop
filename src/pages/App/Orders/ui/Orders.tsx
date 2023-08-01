@@ -35,7 +35,6 @@ export default Orders;
 const style = StyleSheet.create({
   contain: {
     padding: 16,
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     height: "100%",
   },
   footer: {
