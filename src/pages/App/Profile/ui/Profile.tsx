@@ -26,6 +26,7 @@ const Profile = () => {
 
 const style = StyleSheet.create({
   contain: {
+    backgroundColor: "white",
     flex: 1,
     gap: 40,
     paddingHorizontal: 16,

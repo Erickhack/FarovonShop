@@ -8,7 +8,12 @@ interface IProps {
 export const UserLogOutBtn: React.FC<IProps> = (props) => {
   return (
     <View style={style.containerBtn}>
-      <Button title="Выход с аккаунта" color="#F1F1F1" onPress={props.onPress} />
+      <Button
+        title="Выход с аккаунта"
+        color="#F1F1F1"
+        onPress={props.onPress}
+        
+      />
     </View>
   );
 };
