@@ -4,19 +4,27 @@ import { LogIn } from "./Auth/LogIn";
 import Products, { ProductFilter } from "./App/Products";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ClientsSVG, DocsSVG, OrderSVG, ProductSVG } from "../shared/assets";
+import {
+  ClientsSVG,
+  DocsSVG,
+  OrderSVG,
+  ProductSVG,
+  ProfileSVG,
+} from "../shared/assets";
 import {
   DocHeaderNav,
   DovsFilterHeader,
   HeaderNavigationAddClient,
   HeaderNavigationClient,
   ProductHeadNav,
+  ProfileHeaderNavigation,
   SelectClientHeader,
 } from "../widgets";
 import { ProductFilterHeader } from "../widgets";
 import { Orders, SelectClient } from "./App/Orders";
 import Docs, { DocsFilter } from "./App/Docs";
 import Clients, { AddClient } from "./App/Clients";
+import Profile from "./App/Profile";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -123,6 +131,20 @@ const StackClientsNavigation = () => {
   );
 };
 
+const StackProfileNavigation = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="StackPrifle"
+        component={Profile}
+        options={{
+          header: ProfileHeaderNavigation,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const TabNavigation = () => {
   return (
     <Tab.Navigator
@@ -179,7 +201,18 @@ const TabNavigation = () => {
           };
         }}
       />
-      <Tab.Screen name="Profiles" component={Products} />
+      <Tab.Screen
+        name="TabProfile"
+        component={StackProfileNavigation}
+        options={() => {
+          return {
+            tabBarIcon: ({ focused }) => (
+              <ProfileSVG fill={focused ? "#E42346" : "#91989F"} />
+            ),
+            title: "Профиль",
+          };
+        }}
+      />
     </Tab.Navigator>
   );
 };

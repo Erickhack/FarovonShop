@@ -16,6 +16,7 @@ import ClientsSVG from "./TabNavigationBottom/ClientsSVG";
 import CirclePluseSVG16 from "./16x16/CirclePluse/CirclePluseSVG16";
 import EditclientSVG24 from "./24x24/EditClientSVG/EditclientSVG24";
 import ProfileSVG from "./TabNavigationBottom/ProfileSVG";
+import LogOutSVG from "./others/LogOutSVG/LogOutSVG";
 
 export {
   ProductSVG,
@@ -36,4 +37,5 @@ export {
   CirclePluseSVG16,
   EditclientSVG24,
   ProfileSVG,
+  LogOutSVG,
 };
