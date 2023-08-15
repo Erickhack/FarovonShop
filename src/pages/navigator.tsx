@@ -150,6 +150,12 @@ const TabNavigation = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
+        tabBarStyle: {
+          height: 60,
+        },
+        tabBarItemStyle: {
+          padding: 10,
+        },
       }}
       initialRouteName="TabProducts"
     >
