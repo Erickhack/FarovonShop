@@ -10,9 +10,8 @@ export const UserLogOutBtn: React.FC<IProps> = (props) => {
     <View style={style.containerBtn}>
       <Button
         title="Выход с аккаунта"
-        color="#F1F1F1"
+        color="#FF3932"
         onPress={props.onPress}
-        
       />
     </View>
   );
