@@ -4,9 +4,9 @@ import axios from "axios";
 const token = AsyncStorage.getItem("FP_Token");
 
 const instance = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: "http://127.0.0.1:9999",
   headers: {
-    Authorization: `Bearer ${token}`,
+    "Content-Type": "application/json",
   },
 });
 

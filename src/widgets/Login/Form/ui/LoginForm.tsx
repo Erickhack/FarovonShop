@@ -5,6 +5,7 @@ import { Button } from "react-native";
 import { InputText } from "../../../../features";
 import Svg, { Path, SvgProps } from "../../../../shared/types";
 import { GestureResponderEvent } from "react-native";
+import { useAppSelector } from "../../../../shared/hooks";
 
 const IconUser = (props: SvgProps) => (
   <Svg width={24} height={24} fill="none" {...props}>
@@ -37,6 +38,10 @@ interface IProps {
 }
 
 export const LoginForm: React.FC<IProps> = (props) => {
+  const { pending } = useAppSelector((store) => store.Login);
+
+  const handlePress = () => {};
+
   return (
     <View>
       <View style={styles.formContain}>
@@ -62,7 +67,12 @@ export const LoginForm: React.FC<IProps> = (props) => {
         </View>
       </View>
       <View style={styles.containerBtnForm}>
-        <Button title="Войти" color="#032E4D" onPress={props.onPress} />
+        <Button
+          disabled={pending}
+          title={pending ? "Загрузка..." : "Войти"}
+          color="#032E4D"
+          onPress={props.onPress}
+        />
       </View>
     </View>
   );

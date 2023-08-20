@@ -1,7 +1,7 @@
 import { post } from "../../../../shared/axios";
 
 export enum APIPaths {
-  login = "auth/login",
+  login = "/auth/login",
 }
 
 const login = (loginData: { user: string; password: string }) =>

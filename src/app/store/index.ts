@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { LoginReducer as Login } from "../../pages/Auth/LogIn";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    Login,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

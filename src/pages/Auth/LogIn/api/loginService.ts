@@ -7,14 +7,15 @@ const login =
   (loginData: { user: string; password: string }, callback: () => void) =>
   async (dispatch: AppDispatch) => {
     try {
-      dispatch(LoginActionReducer.startPending);
+      dispatch(LoginActionReducer.startPending());
       const token = await LoginAPIS.login(loginData);
+
       await AsyncStorage.setItem("FP_Token", JSON.stringify(token));
       callback();
     } catch (error) {
       console.error(error);
     } finally {
-      dispatch(LoginActionReducer.stopPending);
+      dispatch(LoginActionReducer.stopPending());
     }
   };
 

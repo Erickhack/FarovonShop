@@ -16,10 +16,10 @@ const LoginSlice = createSlice({
       store.pending = true;
     },
     stopPending(store) {
-      store.pending = true;
+      store.pending = false;
     },
   },
 });
 
-export const LoginStoreReducer = LoginSlice.reducer;
+export const LoginReducer = LoginSlice.reducer;
 export const LoginActionReducer = LoginSlice.actions;
