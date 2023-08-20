@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { ProductContain } from "../../../../entities";
 import { H2 } from "../../../../shared/components/HeadingElements";
@@ -10,8 +10,13 @@ export const ProductList: React.FC = () => {
     <ScrollView>
       <ProductContain
         productImage={
-          <View>
-            <Text>Some Image</Text>
+          <View style={style.imageContain}>
+            <Image
+              style={style.image}
+              source={{
+                uri: "https://picsum.photos/seed/o4wCgFG/640/480",
+              }}
+            />
           </View>
         }
       >
@@ -36,5 +41,12 @@ const style = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+  },
+  imageContain: {
+    width: "100%",
+    height: "100%",
+  },
+  image: {
+    flex: 1,
   },
 });
