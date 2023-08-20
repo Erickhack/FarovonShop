@@ -5,7 +5,7 @@ type DataType = "params" | "body";
 
 export function post(
   url: string,
-  data?: any,
+  data: any,
   typeData?: DataType,
   config?: AxiosRequestConfig
 ) {
