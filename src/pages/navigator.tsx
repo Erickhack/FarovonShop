@@ -226,7 +226,7 @@ const TabNavigation = () => {
 export const Navigations = () => {
   return (
     <Drawer.Navigator
-      initialRouteName="App"
+      initialRouteName="Auth"
       screenOptions={{
         headerShown: false,
       }}
