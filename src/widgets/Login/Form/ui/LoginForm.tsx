@@ -34,13 +34,20 @@ const IconKey = (props: SvgProps) => (
 );
 
 interface IProps {
-  onPress: (event: GestureResponderEvent) => void;
+  onPress: (values: { user: string; password: string }) => void;
 }
 
 export const LoginForm: React.FC<IProps> = (props) => {
   const { pending } = useAppSelector((store) => store.Login);
+  const [user, setUser] = React.useState("");
+  const [password, setPassword] = React.useState("");
 
-  const handlePress = () => {};
+  const handlePress = () => {
+    props.onPress({ user, password });
+  };
+
+  const handleChangeUser = (text: string) => setUser(text);
+  const handleChangePassword = (text: string) => setPassword(text);
 
   return (
     <View>
@@ -51,7 +58,11 @@ export const LoginForm: React.FC<IProps> = (props) => {
           </View>
           <View>
             <InputTextContainer icon={IconUser}>
-              <InputText placeholder="Введите ваш логин" />
+              <InputText
+                placeholder="Введите ваш логин"
+                onChangeText={handleChangePassword}
+                defaultValue={password}
+              />
             </InputTextContainer>
           </View>
         </View>
@@ -61,7 +72,12 @@ export const LoginForm: React.FC<IProps> = (props) => {
           </View>
           <View>
             <InputTextContainer icon={IconKey}>
-              <InputText placeholder="Введите ваш пароль" secureTextEntry />
+              <InputText
+                placeholder="Введите ваш пароль"
+                secureTextEntry
+                onChangeText={handleChangeUser}
+                defaultValue={user}
+              />
             </InputTextContainer>
           </View>
         </View>
@@ -71,7 +87,7 @@ export const LoginForm: React.FC<IProps> = (props) => {
           disabled={pending}
           title={pending ? "Загрузка..." : "Войти"}
           color="#032E4D"
-          onPress={props.onPress}
+          onPress={handlePress}
         />
       </View>
     </View>

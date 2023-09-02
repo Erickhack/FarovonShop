@@ -14,6 +14,8 @@ const LogIn: React.FC<IProps> = (props) => {
   const dispatch = useAppDispatch();
 
   const handleOnPress = (values: any) => {
+    console.log(values);
+
     dispatch(
       loginService.login(values, () => {
         props.drawProps.navigation.navigate("App");
