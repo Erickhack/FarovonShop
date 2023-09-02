@@ -4,7 +4,6 @@ import { InputTextContainer } from "../../../../entities";
 import { Button } from "react-native";
 import { InputText } from "../../../../features";
 import Svg, { Path, SvgProps } from "../../../../shared/types";
-import { GestureResponderEvent } from "react-native";
 import { useAppSelector } from "../../../../shared/hooks";
 
 const IconUser = (props: SvgProps) => (
