@@ -4,39 +4,56 @@ import { ScrollView } from "react-native-gesture-handler";
 import { ProductContain } from "../../../../entities";
 import { H2 } from "../../../../shared/components/HeadingElements";
 import { CirculeAddSVG } from "../../../../shared/assets";
+import { useAppSelector } from "../../../../shared/hooks";
 
 export const ProductList: React.FC = () => {
+  const { data } = useAppSelector((store) => store.Products);
+
   return (
-    <ScrollView>
-      <ProductContain
-        productImage={
-          <View style={style.imageContain}>
-            <Image
-              style={style.image}
-              source={{
-                uri: "https://picsum.photos/seed/o4wCgFG/640/480",
-              }}
-            />
-          </View>
-        }
-      >
-        <View>
-          <Text>
-            Молоко пастеризованное отборное 3,4%-4,5% Простоквашино 0,93л
-          </Text>
+    <View style={style.contain}>
+      <ScrollView>
+        <View style={style.scrollViewContain}>
+          {data.products?.map((product, index) => (
+            <ProductContain
+              key={`${index}-${product.id}`}
+              productImage={
+                <View style={style.imageContain}>
+                  <Image
+                    style={style.image}
+                    source={{
+                      uri: product.img,
+                    }}
+                  />
+                </View>
+              }
+            >
+              <View>
+                <Text>{product.description}</Text>
+              </View>
+              <View style={style.actionContain}>
+                <H2>
+                  {product.value} {product.currency}
+                </H2>
+                <View>
+                  <CirculeAddSVG />
+                </View>
+              </View>
+            </ProductContain>
+          ))}
         </View>
-        <View style={style.actionContain}>
-          <H2>8 с</H2>
-          <View>
-            <CirculeAddSVG />
-          </View>
-        </View>
-      </ProductContain>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 };
 
 const style = StyleSheet.create({
+  contain: {
+    height: "87%",
+  },
+  scrollViewContain: {
+    flex: 1,
+    gap: 16,
+  },
   actionContain: {
     display: "flex",
     flexDirection: "row",

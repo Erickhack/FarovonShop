@@ -2,13 +2,14 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 
 interface IProps {
+  key?: string;
   children?: React.ReactNode;
   productImage: React.ReactNode;
 }
 
 export const ProductContain: React.FC<IProps> = (props) => {
   return (
-    <View style={style.productContain}>
+    <View style={style.productContain} key={props.key}>
       <View style={style.contain}>
         <View style={style.imgaeContain}>{props.productImage}</View>
 

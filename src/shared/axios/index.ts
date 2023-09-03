@@ -49,7 +49,7 @@ export function put(
   });
 }
 
-export function get(url: string, params: string, config: AxiosRequestConfig) {
+export function get(url: string, params?: string, config?: AxiosRequestConfig) {
   return instance({
     method: "GET",
     url,

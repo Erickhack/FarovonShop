@@ -8,9 +8,9 @@ const login =
   async (dispatch: AppDispatch) => {
     try {
       dispatch(LoginActionReducer.startPending());
-      const token = await LoginAPIS.login(loginData);
+      const { data } = await LoginAPIS.login(loginData);
 
-      await AsyncStorage.setItem("FP_Token", JSON.stringify(token));
+      await AsyncStorage.setItem("FP_Token", JSON.stringify(data));
       callback();
     } catch (error) {
       console.error(error);

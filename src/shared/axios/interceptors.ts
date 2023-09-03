@@ -1,12 +1,13 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
-const token = AsyncStorage.getItem("FP_Token");
+const token = AsyncStorage.getItem("FP_Token").then((data) => data || "");
 
 const instance = axios.create({
   baseURL: "http://192.168.0.102:9999",
   headers: {
     "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
   },
 });
 
