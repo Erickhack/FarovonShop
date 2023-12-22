@@ -4,10 +4,11 @@ import { AppDispatch } from "../../../../app/store";
 import { LoginActionReducer } from "../model";
 
 const login =
-  (loginData: { user: string; password: string }, callback: () => void) =>
+  (loginData: { email: string; password: string }, callback: () => void) =>
   async (dispatch: AppDispatch) => {
     try {
       dispatch(LoginActionReducer.startPending());
+      console.log(loginData);
       const { data } = await LoginAPIS.login(loginData);
 
       await AsyncStorage.setItem("FP_Token", JSON.stringify(data));

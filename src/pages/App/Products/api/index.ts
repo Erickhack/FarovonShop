@@ -1,7 +1,7 @@
 import { get } from "../../../../shared/axios";
 
 enum APIPaths {
-  GetAllProducts = "/products/get-all",
+  GetAllProducts = "/v2/shop/products",
   GetAllFilters = "/products/get-filters",
 }
 

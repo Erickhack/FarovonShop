@@ -33,19 +33,19 @@ const IconKey = (props: SvgProps) => (
 );
 
 interface IProps {
-  onPress: (values: { user: string; password: string }) => void;
+  onPress: (values: { email: string; password: string }) => void;
 }
 
 export const LoginForm: React.FC<IProps> = (props) => {
   const { pending } = useAppSelector((store) => store.Login);
-  const [user, setUser] = React.useState("");
+  const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   const handlePress = () => {
-    props.onPress({ user, password });
+    props.onPress({ email, password });
   };
 
-  const handleChangeUser = (text: string) => setUser(text);
+  const handleChangeUser = (text: string) => setEmail(text);
   const handleChangePassword = (text: string) => setPassword(text);
 
   return (
@@ -59,8 +59,8 @@ export const LoginForm: React.FC<IProps> = (props) => {
             <InputTextContainer icon={IconUser}>
               <InputText
                 placeholder="Введите ваш логин"
-                onChangeText={handleChangePassword}
-                defaultValue={password}
+                onChangeText={handleChangeUser}
+                defaultValue={email}
               />
             </InputTextContainer>
           </View>
@@ -74,8 +74,8 @@ export const LoginForm: React.FC<IProps> = (props) => {
               <InputText
                 placeholder="Введите ваш пароль"
                 secureTextEntry
-                onChangeText={handleChangeUser}
-                defaultValue={user}
+                onChangeText={setPassword}
+                defaultValue={password}
               />
             </InputTextContainer>
           </View>

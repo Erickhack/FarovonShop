@@ -18,21 +18,24 @@ export const ProductList: React.FC = () => {
               key={`${index}-${product.id}`}
               productImage={
                 <View style={style.imageContain}>
-                  <Image
-                    style={style.image}
-                    source={{
-                      uri: product.img,
-                    }}
-                  />
+                  {product.images.map((img) => (
+                    <Image
+                      style={style.image}
+                      source={{
+                        uri: img.path,
+                      }}
+                    />
+                  ))}
                 </View>
               }
             >
               <View>
-                <Text>{product.description}</Text>
+                <Text>{product.shortDescription}</Text>
               </View>
               <View style={style.actionContain}>
                 <H2>
-                  {product.value} {product.currency}
+                  {/* {product.value} {product.currency} */}
+                  {100} {"Сомони"}
                 </H2>
                 <View>
                   <CirculeAddSVG />

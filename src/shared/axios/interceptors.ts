@@ -4,7 +4,7 @@ import axios from "axios";
 const token = AsyncStorage.getItem("FP_Token").then((data) => data || "");
 
 const instance = axios.create({
-  baseURL: "http://192.168.0.102:9999",
+  baseURL: "https://demo.sylius.com/api",
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${token}`,

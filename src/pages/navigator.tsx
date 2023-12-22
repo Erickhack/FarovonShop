@@ -203,7 +203,7 @@ const TabNavigation = () => {
             tabBarIcon: ({ focused }) => (
               <ClientsSVG fill={focused ? "#E42346" : "#91989F"} />
             ),
-            title: "Документы",
+            title: "Клиенты",
           };
         }}
       />

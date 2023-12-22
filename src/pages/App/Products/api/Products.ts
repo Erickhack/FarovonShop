@@ -9,7 +9,7 @@ const GetAllProducts = (search?: string) => async (dispatch: AppDispatch) => {
     dispatch(
       ProductAction.setData({
         key: "products",
-        value: response.data,
+        value: response.data["hydra:member"],
       })
     );
   } catch (error) {
@@ -24,7 +24,7 @@ const AddProductsToOrder = (productId: number) => (dispatch: AppDispatch) => {
   } catch (error) {
     console.error(error);
   } finally {
-  } 
+  }
 };
 
 export const ProductService = { GetAllProducts };

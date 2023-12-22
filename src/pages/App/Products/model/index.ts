@@ -8,11 +8,19 @@ interface IInitState {
   data: {
     products:
       | {
-          id: string | number;
-          img: string;
-          description: string;
-          value: number;
-          currency: string;
+          // id: string | number;
+          // img: string;
+          // description: string;
+          // value: number;
+          // currency: string;
+
+          id: number;
+          images: {
+            id: number;
+            path: string;
+            type: string;
+          }[];
+          shortDescription: string;
         }[]
       | null;
     productFilter:
