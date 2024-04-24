@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React from "react";
+import React, { useEffect } from "react";
 import { LogIn } from "./Auth/LogIn";
 import Products, { ProductFilter } from "./App/Products";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -25,6 +25,8 @@ import { Orders, SelectClient } from "./App/Orders";
 import Docs, { DocsFilter } from "./App/Docs";
 import Clients, { AddClient } from "./App/Clients";
 import Profile from "./App/Profile";
+import { getDataString, storeDataString } from "../shared/AsyncStorage";
+import { NavigatorController } from "./navigator.controller";
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -231,7 +233,12 @@ export const Navigations = () => {
         headerShown: false,
       }}
     >
-      <Drawer.Screen name="Auth" component={StackAuthNavigator} />
+      {NavigatorController({
+        DrawerScreen: Drawer.Screen,
+        component: StackAuthNavigator,
+      })}
+
+      {/* <Drawer.Screen name="Auth" component={StackAuthNavigator} /> */}
       <Drawer.Screen name="App" component={TabNavigation} />
     </Drawer.Navigator>
   );

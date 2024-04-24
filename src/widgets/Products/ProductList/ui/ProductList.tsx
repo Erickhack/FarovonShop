@@ -18,14 +18,12 @@ export const ProductList: React.FC = () => {
               key={`${index}-${product.id}`}
               productImage={
                 <View style={style.imageContain}>
-                  {product.images.map((img) => (
-                    <Image
-                      style={style.image}
-                      source={{
-                        uri: img.path,
-                      }}
-                    />
-                  ))}
+                  <Image
+                    style={style.image}
+                    source={{
+                      uri: product.images[0].path,
+                    }}
+                  />
                 </View>
               }
             >
